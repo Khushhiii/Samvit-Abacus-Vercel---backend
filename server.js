@@ -10,6 +10,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// ✅ Root route
+app.get('/', (req, res) => {
+  res.send('Samvit Abacus API is running. Use /api routes to interact.');
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Samvit Abacus API running' });
 });
